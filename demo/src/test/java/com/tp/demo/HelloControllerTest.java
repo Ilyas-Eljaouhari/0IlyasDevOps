@@ -1,16 +1,20 @@
 package com.tp.demo;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HelloControllerTest {
 
+    private final HelloController controller = new HelloController();
+
     @Test
     void testHello() {
-        HelloController controller = new HelloController();
+        assertEquals("Greetings, DevOps!", controller.hello());
+    }
 
-        String result = controller.hello();
-
-        assertEquals("Hello DevOps!", result);
+    @Test
+    void testVersion() {
+        assertEquals("1.0.0", controller.version());
     }
 }
